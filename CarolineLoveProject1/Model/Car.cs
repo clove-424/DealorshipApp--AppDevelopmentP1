@@ -34,9 +34,9 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), "Mpg cannot be negative.");
+                    throw new ArgumentOutOfRangeException(nameof(value));
                 }
-                Mpg = Math.Round(field, 2);
+                Mpg = Math.Round(value, 2);
             }
         }
                 
@@ -52,9 +52,9 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(Price), "Price cannot be negative.");
+                    throw new ArgumentOutOfRangeException(nameof(value));
                 }
-                Price = Math.Round(field, 2);
+                Price = Math.Round(value, 2);
             }
         }
 

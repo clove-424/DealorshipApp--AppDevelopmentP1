@@ -62,7 +62,7 @@
         }
 
         /// <summary>
-        /// Allow the shopper to purchase the car.
+        /// Allows the shopper to purchase the car.
         /// </summary>
         /// <param name="car">The car.</param>
         /// <param name="totalCost">The total cost.</param>

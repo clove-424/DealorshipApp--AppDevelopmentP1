@@ -1,6 +1,6 @@
 ﻿namespace CarolineLoveProject1
 {
-    public partial class CarDealorshipForm
+    public partial class CarLotForm
     {
         /// <summary>
         ///  Required designer variable.

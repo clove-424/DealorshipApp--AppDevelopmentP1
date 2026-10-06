@@ -1,8 +1,8 @@
 namespace CarolineLoveProject1
 {
-    public partial class CarDealorshipForm : Form
+    public partial class CarLotForm : Form
     {
-        public CarDealorshipForm()
+        public CarLotForm()
         {
             InitializeComponent();
         }
