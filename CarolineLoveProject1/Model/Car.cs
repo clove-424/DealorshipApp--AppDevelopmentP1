@@ -27,15 +27,36 @@
         /// <value>
         /// The miles per gallon of a car.
         /// </value>
-        public decimal Mpg { get; set; }
-
+        public decimal Mpg
+        {
+            get;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value), "Mpg cannot be negative.");
+                }
+                Mpg = Math.Round(field, 2);
+            }
+        }
+                
         /// <summary>
         /// The price property.
         /// </summary>
         /// <value>
         /// The price of a car.
         /// </value>
-        public decimal Price { get; set; }
+        public decimal Price { 
+            get; 
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(Price), "Price cannot be negative.");
+                }
+                Price = Math.Round(field, 2);
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the Car class.

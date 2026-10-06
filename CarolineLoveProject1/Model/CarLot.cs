@@ -1,6 +1,4 @@
-﻿using System.CodeDom;
-
-namespace CarolineLoveProject1.Model
+﻿namespace CarolineLoveProject1.Model
 {
     /// <summary>
     /// The CarLot class represents a car lot that contains an inventory of cars and a tax rate.
@@ -21,7 +19,7 @@ namespace CarolineLoveProject1.Model
         /// <value>
         /// The inventory count.
         /// </value>
-        public int Count => _inventory.Count;
+        public int Count => _inventory?.Count ?? 0;
 
         /// <summary>
         /// The Inventory property.
