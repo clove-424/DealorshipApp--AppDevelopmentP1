@@ -7,7 +7,6 @@
     {
         private readonly List<Car> _inventory;
 
-
         /// <summary>
         /// The tax rate for the car lot.
         /// </summary>
@@ -27,7 +26,7 @@
         /// <value>
         /// The inventory.
         /// </value>
-        public List<Car>? Inventory => _inventory ?? [];
+        public List<Car> Inventory => _inventory;
 
         /// <summary>
         /// Initializes a new instance of a car lot and adds a default inventory.
@@ -45,7 +44,6 @@
             _inventory.Add(new Car("Honda", "Accord Sedan EX", 30.2m, 26_780.00m));
             _inventory.Add(new Car("Lexus", "ES 350", 24.1m, 42_101.10m));
         }
-
 
         /// <summary>
         /// Finds the cars by make.

@@ -42,7 +42,7 @@
             }
             Name = name;
             MoneyAvailable = moneyAvailable;
-            _cars = new();
+            _cars = null;
         }
 
         /// <summary>

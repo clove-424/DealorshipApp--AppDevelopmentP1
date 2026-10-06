@@ -11,7 +11,7 @@
         /// <value>
         /// The make of a car.
         /// </value>
-        public string? Make { get; set; }
+        public string Make { get; set; }
 
         /// <summary>
         /// The model property.
@@ -19,7 +19,7 @@
         /// <value>
         /// The model of a car.
         /// </value>
-        public string? Model { get; set; }
+        public string Model { get; set; }
         
         /// <summary>
         /// The miles per gallon property.
@@ -27,36 +27,15 @@
         /// <value>
         /// The miles per gallon of a car.
         /// </value>
-        public decimal Mpg
-        {
-            get;
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value));
-                }
-                Mpg = Math.Round(value, 2);
-            }
-        }
-                
+        public decimal Mpg { get; set; }
+
         /// <summary>
         /// The price property.
         /// </summary>
         /// <value>
         /// The price of a car.
         /// </value>
-        public decimal Price { 
-            get; 
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value));
-                }
-                Price = Math.Round(value, 2);
-            }
-        }
+        public decimal Price { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the Car class.
@@ -95,8 +74,14 @@
             }
             Make = make;
             Model = model;
-            Mpg = mpg;
-            Price = price;
+            Mpg = Math.Round(mpg, 2);
+            Price = Math.Round(price, 2);
+        }
+
+        public override string ToString()
+        {
+            var formattedPrice = Price.ToString("C");
+            return $"{Make} {Model}\t{formattedPrice}    {Mpg}mpg";
         }
     }
 }
