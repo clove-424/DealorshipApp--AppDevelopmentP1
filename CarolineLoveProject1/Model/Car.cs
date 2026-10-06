@@ -1,15 +1,59 @@
 ﻿namespace CarolineLoveProject1.Model
 {
+    /// <summary>
+    /// The Car class represents a car with properties for make, model, miles per gallon (mpg), and price.
+    /// </summary>
     public class Car
     {
+        /// <summary>
+        /// The make property.
+        /// </summary>
+        /// <value>
+        /// The make of a car.
+        /// </value>
         public string? Make { get; set; }
 
+        /// <summary>
+        /// The model property.
+        /// </summary>
+        /// <value>
+        /// The model of a car.
+        /// </value>
         public string? Model { get; set; }
+        
+        /// <summary>
+        /// The miles per gallon property.
+        /// </summary>
+        /// <value>
+        /// The miles per gallon of a car.
+        /// </value>
+        public decimal Mpg { get; set; }
 
-        public decimal? Mpg { get; set; }
+        /// <summary>
+        /// The price property.
+        /// </summary>
+        /// <value>
+        /// The price of a car.
+        /// </value>
+        public decimal Price { get; set; }
 
-        public decimal? Price { get; set; }
-
+        /// <summary>
+        /// Initializes a new instance of the Car class.
+        /// </summary>
+        /// <param name="make">The make.</param>
+        /// <param name="model">The model.</param>
+        /// <param name="mpg">The MPG.</param>
+        /// <param name="price">The price.</param>
+        /// <exception cref="System.ArgumentException">
+        /// make
+        /// or
+        /// model
+        /// </exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// mpg
+        /// or
+        /// price
+        /// </exception>
         public Car(string make, string model, decimal mpg, decimal price)
         {
             if (string.IsNullOrWhiteSpace(make))
