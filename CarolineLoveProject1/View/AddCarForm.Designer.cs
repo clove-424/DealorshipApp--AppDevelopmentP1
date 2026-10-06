@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            addCarMenuStrip = new MenuStrip();
-            optionsToolStripMenuItem = new ToolStripMenuItem();
-            backMenuItem = new ToolStripMenuItem();
             makeLabel = new Label();
             modelLabel = new Label();
             mpgLabel = new Label();
@@ -40,37 +37,12 @@
             mpgTextBox = new TextBox();
             priceTextBox = new TextBox();
             addCarButton = new Button();
-            addCarMenuStrip.SuspendLayout();
             SuspendLayout();
-            // 
-            // addCarMenuStrip
-            // 
-            addCarMenuStrip.ImageScalingSize = new Size(20, 20);
-            addCarMenuStrip.Items.AddRange(new ToolStripItem[] { optionsToolStripMenuItem });
-            addCarMenuStrip.Location = new Point(0, 0);
-            addCarMenuStrip.Name = "addCarMenuStrip";
-            addCarMenuStrip.Size = new Size(652, 28);
-            addCarMenuStrip.TabIndex = 0;
-            addCarMenuStrip.Text = "addCarMenuStrip";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { backMenuItem });
-            optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(75, 24);
-            optionsToolStripMenuItem.Text = "Options";
-            // 
-            // backMenuItem
-            // 
-            backMenuItem.Name = "backMenuItem";
-            backMenuItem.Size = new Size(123, 26);
-            backMenuItem.Text = "Back";
-            backMenuItem.Click += BackToMainMenuClick;
             // 
             // makeLabel
             // 
             makeLabel.AutoSize = true;
-            makeLabel.Location = new Point(220, 85);
+            makeLabel.Location = new Point(224, 64);
             makeLabel.Name = "makeLabel";
             makeLabel.Size = new Size(48, 20);
             makeLabel.TabIndex = 1;
@@ -79,7 +51,7 @@
             // modelLabel
             // 
             modelLabel.AutoSize = true;
-            modelLabel.Location = new Point(220, 139);
+            modelLabel.Location = new Point(224, 118);
             modelLabel.Name = "modelLabel";
             modelLabel.Size = new Size(55, 20);
             modelLabel.TabIndex = 3;
@@ -88,7 +60,7 @@
             // mpgLabel
             // 
             mpgLabel.AutoSize = true;
-            mpgLabel.Location = new Point(220, 196);
+            mpgLabel.Location = new Point(224, 175);
             mpgLabel.Name = "mpgLabel";
             mpgLabel.Size = new Size(43, 20);
             mpgLabel.TabIndex = 5;
@@ -97,7 +69,7 @@
             // priceLabel
             // 
             priceLabel.AutoSize = true;
-            priceLabel.Location = new Point(220, 258);
+            priceLabel.Location = new Point(224, 237);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new Size(44, 20);
             priceLabel.TabIndex = 7;
@@ -105,35 +77,35 @@
             // 
             // makeTextBox
             // 
-            makeTextBox.Location = new Point(303, 82);
+            makeTextBox.Location = new Point(307, 61);
             makeTextBox.Name = "makeTextBox";
             makeTextBox.Size = new Size(125, 27);
             makeTextBox.TabIndex = 2;
             // 
             // modelTextBox
             // 
-            modelTextBox.Location = new Point(303, 136);
+            modelTextBox.Location = new Point(307, 115);
             modelTextBox.Name = "modelTextBox";
             modelTextBox.Size = new Size(125, 27);
             modelTextBox.TabIndex = 4;
             // 
             // mpgTextBox
             // 
-            mpgTextBox.Location = new Point(303, 193);
+            mpgTextBox.Location = new Point(307, 172);
             mpgTextBox.Name = "mpgTextBox";
             mpgTextBox.Size = new Size(125, 27);
             mpgTextBox.TabIndex = 6;
             // 
             // priceTextBox
             // 
-            priceTextBox.Location = new Point(303, 255);
+            priceTextBox.Location = new Point(307, 234);
             priceTextBox.Name = "priceTextBox";
             priceTextBox.Size = new Size(125, 27);
             priceTextBox.TabIndex = 8;
             // 
             // addCarButton
             // 
-            addCarButton.Location = new Point(220, 342);
+            addCarButton.Location = new Point(224, 321);
             addCarButton.Name = "addCarButton";
             addCarButton.Size = new Size(208, 29);
             addCarButton.TabIndex = 9;
@@ -155,21 +127,13 @@
             Controls.Add(mpgLabel);
             Controls.Add(modelLabel);
             Controls.Add(makeLabel);
-            Controls.Add(addCarMenuStrip);
-            MainMenuStrip = addCarMenuStrip;
             Name = "AddCarForm";
             Text = "AddCarForm";
-            addCarMenuStrip.ResumeLayout(false);
-            addCarMenuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private MenuStrip addCarMenuStrip;
-        private ToolStripMenuItem optionsToolStripMenuItem;
-        private ToolStripMenuItem backMenuItem;
         private Label makeLabel;
         private Label modelLabel;
         private Label mpgLabel;

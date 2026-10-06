@@ -58,19 +58,19 @@
         {
             if (string.IsNullOrWhiteSpace(make))
             {
-                throw new ArgumentException(nameof(make));
+                throw new ArgumentException("Make cannot be null or whitespace.", nameof(make));
             }
             if (string.IsNullOrWhiteSpace(model))
             {
-                throw new ArgumentException(nameof(model));
+                throw new ArgumentException("Model cannot be null or whitespace.", nameof(model));
             }
-            if (mpg < 0)
+            if (mpg <= 0.00m)
             {
-                throw new ArgumentOutOfRangeException(nameof(mpg));
+                throw new ArgumentOutOfRangeException(nameof(mpg), "Mpg must be a positive value.");
             }
-            if (price < 0)
+            if (price <= 0.00m)
             {
-                throw new ArgumentOutOfRangeException(nameof(price));
+                throw new ArgumentOutOfRangeException(nameof(price), "Price must be a positive value.");
             }
             Make = make;
             Model = model;

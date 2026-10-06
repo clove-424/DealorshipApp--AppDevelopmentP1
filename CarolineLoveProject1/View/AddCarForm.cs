@@ -24,47 +24,43 @@ namespace CarolineLoveProject1.View
             InitializeComponent();
         }
 
-        private void BackToMainMenuClick(object sender, EventArgs e)
-        {
-            Car = null;
-
-            Close();
-        }
-
         private void AddCarButtonClick(object sender, EventArgs e)
         {
-            var make = makeTextBox.Text;
-            var model = modelTextBox.Text;
-            var mpg = decimal.Parse(mpgTextBox.Text);
-            var price = decimal.Parse(priceTextBox.Text);
+            bool addSuccessful;
+            try
+            {
+                var make = makeTextBox.Text;
+                var model = modelTextBox.Text;
+                var mpg = decimal.Parse(mpgTextBox.Text);
+                var price = decimal.Parse(priceTextBox.Text);
 
-            ValidationCheck(make, model, mpg, price);
-        }
+                if (!string.IsNullOrWhiteSpace(make) && !string.IsNullOrWhiteSpace(model) && mpg > 0.00m && price > 0.00m)
+                {
+                    Car = new Car(make, model, mpg, price);
+                    addSuccessful = true;
+                }
+                else
+                {
+                    DisplayMessage("Please enter valid values for all fields.", "Error", MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            catch
+            {
+                DisplayMessage("Please enter valid values for all fields.", "Error", MessageBoxIcon.Error);
+                return;
+            }
 
-        private void ValidationCheck(string make, string model, decimal mpg, decimal price)
-        {
-            if (string.IsNullOrWhiteSpace(make))
+            if (addSuccessful)
             {
-                MessageBox.Show("Make is required.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (string.IsNullOrWhiteSpace(model))
-            {
-                MessageBox.Show("Model is required.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (mpg <= 0)
-            {
-                MessageBox.Show("MPG must be greater than 0.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (price <= 0)
-            {
-                MessageBox.Show("Price must be greater than 0.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                Car = new Car(make, model, mpg, price);
-                MessageBox.Show("Car added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DisplayMessage("Car added successfully!", "Success", MessageBoxIcon.Information);
                 Close();
             }
+        }
+
+        private static void DisplayMessage(string message, string caption, MessageBoxIcon icon)
+        {
+            MessageBox.Show(message, caption, MessageBoxButtons.OK, icon);
         }
     }
 }
