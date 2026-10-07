@@ -21,7 +21,7 @@
         /// <value>
         /// The money available.
         /// </value>
-        public decimal? MoneyAvailable { get; set; }
+        public decimal MoneyAvailable { get; set; }
 
         /// <summary>
         /// Initializes a new instance of a Shopper.
@@ -32,16 +32,16 @@
         /// <exception cref="System.ArgumentOutOfRangeException">moneyAvailable</exception>
         public Shopper(string name, decimal moneyAvailable)
         {
-            if (string.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrEmpty(name))
             {
-                throw new ArgumentException(nameof(name));
+                throw new ArgumentException("Name cannot be null or empty.", nameof(name));
             }
             if (moneyAvailable < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(moneyAvailable));
+                throw new ArgumentOutOfRangeException(nameof(moneyAvailable), "Money available cannot be negative.");
             }
             Name = name;
-            MoneyAvailable = moneyAvailable;
+            MoneyAvailable = Math.Round(moneyAvailable, 2);
             _cars = null;
         }
 
@@ -52,7 +52,7 @@
         /// <returns>
         ///   true if the shopper can pay the total cost; otherwise, false.
         /// </returns>
-        public bool CanPurchase(decimal? totalCost)
+        public bool CanPurchase(decimal totalCost)
         {
             if (MoneyAvailable >= totalCost)
             {
@@ -66,7 +66,7 @@
         /// </summary>
         /// <param name="car">The car.</param>
         /// <param name="totalCost">The total cost.</param>
-        public void PurchaseCar(Car? car, decimal? totalCost)
+        public void PurchaseCar(Car? car, decimal totalCost)
         {
             if (car != null && CanPurchase(totalCost))
             {

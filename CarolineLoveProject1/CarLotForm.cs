@@ -46,5 +46,18 @@ namespace CarolineLoveProject1
             carLotListBox.Items.Clear();
             carLotListBox.DataSource = _lot.Inventory;
         }
+
+        private void AddShopperClick(object sender, EventArgs e)
+        {
+            var shopperForm = new ShopperForm();
+            shopperForm.ShowDialog();
+
+            var shopperToAdd = shopperForm.Shopper;
+            if (shopperToAdd != null)
+            {
+                shopperNameLabel.Text = $"Shopper: {shopperToAdd.Name}";
+                shopperTotalLabel.Text = $"Money Available: {shopperToAdd.MoneyAvailable.ToString("C")}";
+            }
+        }
     }
 }

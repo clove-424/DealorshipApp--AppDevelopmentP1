@@ -34,20 +34,22 @@
             addCarToolStripMenuItem = new ToolStripMenuItem();
             inventoryDetailsMenuItem = new ToolStripMenuItem();
             exitMenuItem = new ToolStripMenuItem();
-            button1 = new Button();
-            button2 = new Button();
+            addShopperButton = new Button();
+            purchaseCarButton = new Button();
             label1 = new Label();
+            shopperNameLabel = new Label();
+            shopperTotalLabel = new Label();
             carLotMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // carLotListBox
             // 
             carLotListBox.FormattingEnabled = true;
-            carLotListBox.Location = new Point(123, 68);
+            carLotListBox.Location = new Point(133, 155);
             carLotListBox.Margin = new Padding(3, 4, 3, 4);
             carLotListBox.Name = "carLotListBox";
-            carLotListBox.Size = new Size(398, 284);
-            carLotListBox.TabIndex = 1;
+            carLotListBox.Size = new Size(398, 264);
+            carLotListBox.TabIndex = 5;
             // 
             // carLotMenuStrip
             // 
@@ -56,7 +58,7 @@
             carLotMenuStrip.Location = new Point(0, 0);
             carLotMenuStrip.Name = "carLotMenuStrip";
             carLotMenuStrip.Size = new Size(652, 28);
-            carLotMenuStrip.TabIndex = 1;
+            carLotMenuStrip.TabIndex = 0;
             carLotMenuStrip.Text = "carLotMenuStrip";
             // 
             // optionsToolStripMenuItem
@@ -69,58 +71,76 @@
             // addCarToolStripMenuItem
             // 
             addCarToolStripMenuItem.Name = "addCarToolStripMenuItem";
-            addCarToolStripMenuItem.Size = new Size(224, 26);
+            addCarToolStripMenuItem.Size = new Size(203, 26);
             addCarToolStripMenuItem.Text = "Add Car to Lot";
             addCarToolStripMenuItem.Click += AddCarMenuItemClick;
             // 
             // inventoryDetailsMenuItem
             // 
             inventoryDetailsMenuItem.Name = "inventoryDetailsMenuItem";
-            inventoryDetailsMenuItem.Size = new Size(224, 26);
+            inventoryDetailsMenuItem.Size = new Size(203, 26);
             inventoryDetailsMenuItem.Text = "Inventory Details";
             // 
             // exitMenuItem
             // 
             exitMenuItem.Name = "exitMenuItem";
-            exitMenuItem.Size = new Size(224, 26);
+            exitMenuItem.Size = new Size(203, 26);
             exitMenuItem.Text = "Exit";
             // 
-            // button1
+            // addShopperButton
             // 
-            button1.Location = new Point(161, 376);
-            button1.Name = "button1";
-            button1.Size = new Size(138, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Add Shopper";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += PurchaseCarClick;
+            addShopperButton.Location = new Point(133, 31);
+            addShopperButton.Name = "addShopperButton";
+            addShopperButton.Size = new Size(126, 29);
+            addShopperButton.TabIndex = 1;
+            addShopperButton.Text = "Add Shopper";
+            addShopperButton.UseVisualStyleBackColor = true;
+            addShopperButton.Click += AddShopperClick;
             // 
-            // button2
+            // purchaseCarButton
             // 
-            button2.Location = new Point(341, 376);
-            button2.Name = "button2";
-            button2.Size = new Size(138, 29);
-            button2.TabIndex = 3;
-            button2.Text = "Purchase Car";
-            button2.UseVisualStyleBackColor = true;
+            purchaseCarButton.Location = new Point(133, 426);
+            purchaseCarButton.Name = "purchaseCarButton";
+            purchaseCarButton.Size = new Size(138, 29);
+            purchaseCarButton.TabIndex = 6;
+            purchaseCarButton.Text = "Purchase Car";
+            purchaseCarButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(123, 44);
+            label1.Location = new Point(133, 131);
             label1.Name = "label1";
             label1.Size = new Size(70, 20);
-            label1.TabIndex = 0;
+            label1.TabIndex = 4;
             label1.Text = "Inventory";
+            // 
+            // shopperNameLabel
+            // 
+            shopperNameLabel.Location = new Point(314, 29);
+            shopperNameLabel.Name = "shopperNameLabel";
+            shopperNameLabel.Size = new Size(338, 20);
+            shopperNameLabel.TabIndex = 2;
+            shopperNameLabel.TextAlign = ContentAlignment.TopRight;
+            // 
+            // shopperTotalLabel
+            // 
+            shopperTotalLabel.Location = new Point(314, 49);
+            shopperTotalLabel.Name = "shopperTotalLabel";
+            shopperTotalLabel.Size = new Size(338, 20);
+            shopperTotalLabel.TabIndex = 3;
+            shopperTotalLabel.TextAlign = ContentAlignment.TopRight;
             // 
             // CarLotForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(652, 423);
+            ClientSize = new Size(652, 480);
+            Controls.Add(shopperTotalLabel);
+            Controls.Add(shopperNameLabel);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(purchaseCarButton);
+            Controls.Add(addShopperButton);
             Controls.Add(carLotListBox);
             Controls.Add(carLotMenuStrip);
             MainMenuStrip = carLotMenuStrip;
@@ -141,8 +161,10 @@
         private ToolStripMenuItem addCarToolStripMenuItem;
         private ToolStripMenuItem inventoryDetailsMenuItem;
         private ToolStripMenuItem exitMenuItem;
-        private Button button1;
-        private Button button2;
+        private Button addShopperButton;
+        private Button purchaseCarButton;
         private Label label1;
+        private Label shopperNameLabel;
+        private Label shopperTotalLabel;
     }
 }

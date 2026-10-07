@@ -128,7 +128,7 @@
             Controls.Add(modelLabel);
             Controls.Add(makeLabel);
             Name = "AddCarForm";
-            Text = "AddCarForm";
+            Text = "Add Car";
             ResumeLayout(false);
             PerformLayout();
         }
