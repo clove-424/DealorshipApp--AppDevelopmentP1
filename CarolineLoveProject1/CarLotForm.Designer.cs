@@ -45,10 +45,9 @@
             // carLotListBox
             // 
             carLotListBox.FormattingEnabled = true;
-            carLotListBox.Location = new Point(133, 155);
-            carLotListBox.Margin = new Padding(3, 4, 3, 4);
+            carLotListBox.Location = new Point(116, 116);
             carLotListBox.Name = "carLotListBox";
-            carLotListBox.Size = new Size(398, 264);
+            carLotListBox.Size = new Size(349, 199);
             carLotListBox.TabIndex = 5;
             // 
             // carLotMenuStrip
@@ -57,7 +56,8 @@
             carLotMenuStrip.Items.AddRange(new ToolStripItem[] { optionsToolStripMenuItem });
             carLotMenuStrip.Location = new Point(0, 0);
             carLotMenuStrip.Name = "carLotMenuStrip";
-            carLotMenuStrip.Size = new Size(652, 28);
+            carLotMenuStrip.Padding = new Padding(5, 2, 0, 2);
+            carLotMenuStrip.Size = new Size(570, 24);
             carLotMenuStrip.TabIndex = 0;
             carLotMenuStrip.Text = "carLotMenuStrip";
             // 
@@ -65,33 +65,35 @@
             // 
             optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addCarToolStripMenuItem, inventoryDetailsMenuItem, exitMenuItem });
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(75, 24);
+            optionsToolStripMenuItem.Size = new Size(61, 20);
             optionsToolStripMenuItem.Text = "Options";
             // 
             // addCarToolStripMenuItem
             // 
             addCarToolStripMenuItem.Name = "addCarToolStripMenuItem";
-            addCarToolStripMenuItem.Size = new Size(203, 26);
+            addCarToolStripMenuItem.Size = new Size(162, 22);
             addCarToolStripMenuItem.Text = "Add Car to Lot";
             addCarToolStripMenuItem.Click += AddCarMenuItemClick;
             // 
             // inventoryDetailsMenuItem
             // 
             inventoryDetailsMenuItem.Name = "inventoryDetailsMenuItem";
-            inventoryDetailsMenuItem.Size = new Size(203, 26);
+            inventoryDetailsMenuItem.Size = new Size(162, 22);
             inventoryDetailsMenuItem.Text = "Inventory Details";
             // 
             // exitMenuItem
             // 
             exitMenuItem.Name = "exitMenuItem";
-            exitMenuItem.Size = new Size(203, 26);
+            exitMenuItem.Size = new Size(162, 22);
             exitMenuItem.Text = "Exit";
+            exitMenuItem.Click += ExitFormClick;
             // 
             // addShopperButton
             // 
-            addShopperButton.Location = new Point(133, 31);
+            addShopperButton.Location = new Point(116, 23);
+            addShopperButton.Margin = new Padding(3, 2, 3, 2);
             addShopperButton.Name = "addShopperButton";
-            addShopperButton.Size = new Size(126, 29);
+            addShopperButton.Size = new Size(110, 22);
             addShopperButton.TabIndex = 1;
             addShopperButton.Text = "Add Shopper";
             addShopperButton.UseVisualStyleBackColor = true;
@@ -99,43 +101,45 @@
             // 
             // purchaseCarButton
             // 
-            purchaseCarButton.Location = new Point(133, 426);
+            purchaseCarButton.Location = new Point(116, 320);
+            purchaseCarButton.Margin = new Padding(3, 2, 3, 2);
             purchaseCarButton.Name = "purchaseCarButton";
-            purchaseCarButton.Size = new Size(138, 29);
+            purchaseCarButton.Size = new Size(121, 22);
             purchaseCarButton.TabIndex = 6;
             purchaseCarButton.Text = "Purchase Car";
             purchaseCarButton.UseVisualStyleBackColor = true;
+            purchaseCarButton.Click += PurchaseCarClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(133, 131);
+            label1.Location = new Point(116, 98);
             label1.Name = "label1";
-            label1.Size = new Size(70, 20);
+            label1.Size = new Size(57, 15);
             label1.TabIndex = 4;
             label1.Text = "Inventory";
             // 
             // shopperNameLabel
             // 
-            shopperNameLabel.Location = new Point(314, 29);
+            shopperNameLabel.Location = new Point(266, 22);
             shopperNameLabel.Name = "shopperNameLabel";
-            shopperNameLabel.Size = new Size(338, 20);
+            shopperNameLabel.Size = new Size(296, 15);
             shopperNameLabel.TabIndex = 2;
             shopperNameLabel.TextAlign = ContentAlignment.TopRight;
             // 
             // shopperTotalLabel
             // 
-            shopperTotalLabel.Location = new Point(314, 49);
+            shopperTotalLabel.Location = new Point(266, 37);
             shopperTotalLabel.Name = "shopperTotalLabel";
-            shopperTotalLabel.Size = new Size(338, 20);
+            shopperTotalLabel.Size = new Size(296, 15);
             shopperTotalLabel.TabIndex = 3;
             shopperTotalLabel.TextAlign = ContentAlignment.TopRight;
             // 
             // CarLotForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(652, 480);
+            ClientSize = new Size(570, 360);
             Controls.Add(shopperTotalLabel);
             Controls.Add(shopperNameLabel);
             Controls.Add(label1);
@@ -144,7 +148,6 @@
             Controls.Add(carLotListBox);
             Controls.Add(carLotMenuStrip);
             MainMenuStrip = carLotMenuStrip;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "CarLotForm";
             Text = "Caroline Love Project 1";
             carLotMenuStrip.ResumeLayout(false);

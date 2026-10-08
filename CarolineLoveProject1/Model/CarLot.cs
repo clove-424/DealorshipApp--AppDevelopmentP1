@@ -89,7 +89,7 @@
         }
 
         /// <summary>
-        /// Purchases the car.
+        /// Removes the car from inventory and returns the removed car.
         /// </summary>
         /// <param name="make">The make.</param>
         /// <param name="model">The model.</param>
@@ -123,7 +123,7 @@
         /// </summary>
         /// <param name="car">The car.</param>
         /// <returns>The total cost of the purchase, or $0.00 if the car is not found.</returns>
-        public decimal? GetTotalCostOfPurchase(Car? car)
+        public decimal GetTotalCostOfPurchase(Car? car)
         {
             if (car != null)
             {

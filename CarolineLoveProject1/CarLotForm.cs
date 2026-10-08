@@ -11,6 +11,8 @@ namespace CarolineLoveProject1
     {
         private readonly CarLot _lot;
 
+        private Shopper? _shopper;
+
         /// <summary>
         /// Initializes a new instance of the CarLotForm class.
         /// </summary>
@@ -23,6 +25,18 @@ namespace CarolineLoveProject1
 
         private void PurchaseCarClick(object sender, EventArgs e)
         {
+            var car = (Car?) carLotListBox.SelectedItem;
+            if (car != null && _shopper != null) 
+            {
+                var carToRemove = _lot.PurchaseCar(car.Make, car.Model);
+                var totalCost = _lot.GetTotalCostOfPurchase(carToRemove);
+                var totalLeft = _shopper.PurchaseCar(carToRemove, totalCost);
+
+                shopperTotalLabel.Text = $"Money Available: {totalLeft:C}";
+                var message = $"Car: {carToRemove} \nwas purchased successfully! \nTotal Cost: {totalCost:C}";
+                MessageBox.Show(message);
+            }
+
             UpdateCarLot();
         }
 
@@ -52,12 +66,17 @@ namespace CarolineLoveProject1
             var shopperForm = new ShopperForm();
             shopperForm.ShowDialog();
 
-            var shopperToAdd = shopperForm.Shopper;
-            if (shopperToAdd != null)
+            _shopper = shopperForm.Shopper;
+            if (_shopper != null)
             {
-                shopperNameLabel.Text = $"Shopper: {shopperToAdd.Name}";
-                shopperTotalLabel.Text = $"Money Available: {shopperToAdd.MoneyAvailable.ToString("C")}";
+                shopperNameLabel.Text = $"Shopper: {_shopper.Name}";
+                shopperTotalLabel.Text = $"Money Available: {_shopper.MoneyAvailable.ToString("C")}";
             }
+        }
+
+        private void ExitFormClick(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

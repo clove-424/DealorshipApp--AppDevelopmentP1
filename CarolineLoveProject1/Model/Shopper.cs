@@ -62,17 +62,19 @@
         }
 
         /// <summary>
-        /// Allows the shopper to purchase the car.
+        /// Adds a car to the shopper's list of purchased cars and returns the remaining money available after the purchase.
         /// </summary>
         /// <param name="car">The car.</param>
         /// <param name="totalCost">The total cost.</param>
-        public void PurchaseCar(Car? car, decimal totalCost)
+        public decimal PurchaseCar(Car? car, decimal totalCost)
         {
             if (car != null && CanPurchase(totalCost))
             {
                 _cars?.Add(car);
                 MoneyAvailable -= totalCost;
             }
+
+            return MoneyAvailable;
         }
     }
 }
