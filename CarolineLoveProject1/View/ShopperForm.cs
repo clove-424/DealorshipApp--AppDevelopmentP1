@@ -38,18 +38,20 @@ namespace CarolineLoveProject1.View
                 }
                 else
                 {
-                    MessageBox.Show("Please enter valid information for both fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please enter valid information for both fields.", "Error", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch
             {
-                MessageBox.Show("Please enter valid information for both fields.", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Please enter valid information for both fields.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (addSuccessful)
             {
-                MessageBox.Show("Shopper added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Shopper added successfully.", "Success", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
         }

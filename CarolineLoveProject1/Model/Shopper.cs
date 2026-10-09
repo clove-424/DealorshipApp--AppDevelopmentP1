@@ -5,7 +5,7 @@
     /// </summary>
     public class Shopper
     {
-        private readonly List<Car>? _cars;
+        private readonly List<Car> _cars;
 
         /// <summary>
         /// The shopper's name property.
@@ -42,19 +42,20 @@
             }
             Name = name;
             MoneyAvailable = Math.Round(moneyAvailable, 2);
-            _cars = null;
+            _cars = new();
         }
 
         /// <summary>
         /// Determines whether a shopper can pay the total cost of a car.
         /// </summary>
+        /// <param name="car">The car.</param>
         /// <param name="totalCost">The total cost.</param>
         /// <returns>
         ///   true if the shopper can pay the total cost; otherwise, false.
         /// </returns>
-        public bool CanPurchase(decimal totalCost)
+        public bool CanPurchase(Car car, decimal totalCost)
         {
-            if (MoneyAvailable >= totalCost)
+            if (MoneyAvailable >= totalCost && !_cars.Contains(car))
             {
                 return true;
             }
@@ -66,15 +67,13 @@
         /// </summary>
         /// <param name="car">The car.</param>
         /// <param name="totalCost">The total cost.</param>
-        public decimal PurchaseCar(Car? car, decimal totalCost)
+        public void PurchaseCar(Car car, decimal totalCost)
         {
-            if (car != null && CanPurchase(totalCost))
+            if (CanPurchase(car, totalCost))
             {
-                _cars?.Add(car);
+                _cars.Add(car);
                 MoneyAvailable -= totalCost;
             }
-
-            return MoneyAvailable;
         }
     }
 }
