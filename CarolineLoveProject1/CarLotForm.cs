@@ -9,9 +9,9 @@ namespace CarolineLoveProject1
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class CarLotForm : Form
     {
-        private readonly CarLot _lot;
-
         private Shopper? _shopper;
+
+        public CarLot CarLot { get; }
 
         /// <summary>
         /// Initializes a new instance of the CarLotForm class.
@@ -19,7 +19,7 @@ namespace CarolineLoveProject1
         public CarLotForm()
         {
             InitializeComponent();
-            _lot = new();
+            CarLot = new();
             UpdateCarLot();
         }
 
@@ -28,25 +28,30 @@ namespace CarolineLoveProject1
             var car = (Car?) carLotListBox.SelectedItem;
             if (car != null && _shopper != null)
             {
-                var totalCost = _lot.GetTotalCostOfPurchase(car);
+                var totalCost = CarLot.GetTotalCostOfPurchase(car);
                 if (_shopper.CanPurchase(car, totalCost))
                 {
                     MakePurchase(car, totalCost);
                 }
                 else
                 {
-                    MessageBox.Show("You do not have enough money to purchase this car.", "Purchase Failed", 
+                    MessageBox.Show("You do not have enough money to purchase this car.", "Purchase Failed",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+            else if (_shopper == null)
+            {
+                MessageBox.Show("Please add a shopper before making a purchase.", "Purchase Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void MakePurchase(Car car, decimal totalCost)
         {
-            var carToRemove = _lot.PurchaseCar(car.Make, car.Model);
+            var carToRemove = CarLot.PurchaseCar(car.Make, car.Model);
             _shopper.PurchaseCar(carToRemove, totalCost);
 
-            var message = $"{carToRemove.Make} {carToRemove.Model} \nwas purchased successfully! \nTotal Cost After Tax: {totalCost:C}";
+            var message = $"{carToRemove.Make} {carToRemove.Model} \npurchased successfully! \nTotal Cost After Tax: {totalCost:C}";
             MessageBox.Show(message, "Purchase Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             shopperTotalLabel.Text = $"Money Available: {_shopper.MoneyAvailable:C}";
 
@@ -61,7 +66,7 @@ namespace CarolineLoveProject1
             var carToAdd = addCarForm.Car;
             if (carToAdd != null)
             {
-                _lot.AddCar(carToAdd.Make, carToAdd.Model, carToAdd.Mpg, carToAdd.Price);
+                CarLot.AddCar(carToAdd.Make, carToAdd.Model, carToAdd.Mpg, carToAdd.Price);
             }
 
             UpdateCarLot();
@@ -71,7 +76,7 @@ namespace CarolineLoveProject1
         {
             carLotListBox.DataSource = null;
             carLotListBox.Items.Clear();
-            carLotListBox.DataSource = _lot.Inventory;
+            carLotListBox.DataSource = CarLot.Inventory;
         }
 
         private void AddShopperClick(object sender, EventArgs e)
@@ -90,6 +95,12 @@ namespace CarolineLoveProject1
         private void ExitFormClick(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void InventoryDetailsClick(object sender, EventArgs e)
+        {
+            var inventoryDetailsForm = new InventoryDetailsForm(this);
+            inventoryDetailsForm.ShowDialog();
         }
     }
 }

@@ -50,7 +50,7 @@
             moneyAvailableLabel.Location = new Point(150, 149);
             moneyAvailableLabel.Name = "moneyAvailableLabel";
             moneyAvailableLabel.Size = new Size(117, 20);
-            moneyAvailableLabel.TabIndex = 1;
+            moneyAvailableLabel.TabIndex = 2;
             moneyAvailableLabel.Text = "Budget Amount:";
             // 
             // shopperNameTextBox
@@ -58,7 +58,7 @@
             shopperNameTextBox.Location = new Point(273, 71);
             shopperNameTextBox.Name = "shopperNameTextBox";
             shopperNameTextBox.Size = new Size(125, 27);
-            shopperNameTextBox.TabIndex = 2;
+            shopperNameTextBox.TabIndex = 1;
             // 
             // moneyAvailableTextBox
             // 

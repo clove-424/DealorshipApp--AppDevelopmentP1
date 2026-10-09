@@ -64,7 +64,7 @@
             {
                 throw new ArgumentException("Model cannot be null or whitespace.", nameof(model));
             }
-            if (mpg <= 0.00m)
+            if (mpg <= 0.0m)
             {
                 throw new ArgumentOutOfRangeException(nameof(mpg), "Mpg must be a positive value.");
             }
@@ -74,14 +74,14 @@
             }
             Make = make;
             Model = model;
-            Mpg = Math.Round(mpg, 2);
+            Mpg = Math.Round(mpg, 1);
             Price = Math.Round(price, 2);
         }
 
         public override string ToString()
         {
             var formattedPrice = Price.ToString("C");
-            return $"{Make} {Model}\t{formattedPrice}    {Mpg}mpg";
+            return $"{Make} {Model} {formattedPrice} {Mpg}mpg";
         }
     }
 }
