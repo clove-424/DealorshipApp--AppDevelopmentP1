@@ -8,6 +8,10 @@ namespace CarolineLoveProject1.View
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class ShopperPurchasesForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of a ShopperPurchasesForm.
+        /// </summary>
+        /// <param name="shopper">The shopper.</param>
         public ShopperPurchasesForm(Shopper? shopper)
         {
             InitializeComponent();

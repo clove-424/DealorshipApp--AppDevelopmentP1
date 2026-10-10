@@ -5,6 +5,12 @@
     /// </summary>
     public class Shopper
     {
+        /// <summary>
+        /// The cars purchased by the shopper property.
+        /// </summary>
+        /// <value>
+        /// The cars.
+        /// </value>
         public List<Car> Cars { get; set; }
 
         /// <summary>

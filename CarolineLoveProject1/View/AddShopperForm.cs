@@ -3,7 +3,8 @@
 namespace CarolineLoveProject1.View
 {
     /// <summary>
-    /// The AddShopperForm class represents a form for adding a new shopper with properties for name and money available.
+    /// The AddShopperForm class represents a form for adding a new shopper
+    /// with properties for name and money available.
     /// </summary>
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class AddShopperForm : Form

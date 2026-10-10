@@ -3,7 +3,8 @@
 namespace CarolineLoveProject1.View
 {
     /// <summary>
-    /// The SearchMakeForm class represents a form that allows users to search for cars by their make in the car lot.
+    /// The SearchMakeForm class represents a form that allows users to search for cars
+    /// by their make in the car lot.
     /// </summary>
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class SearchMakeForm : Form

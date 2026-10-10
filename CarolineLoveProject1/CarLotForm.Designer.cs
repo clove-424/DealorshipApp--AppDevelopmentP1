@@ -33,6 +33,7 @@
             optionsToolStripMenuItem = new ToolStripMenuItem();
             addCarToolStripMenuItem = new ToolStripMenuItem();
             inventoryDetailsMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             clearSearchMenuItem = new ToolStripMenuItem();
             exitMenuItem = new ToolStripMenuItem();
             addShopperButton = new Button();
@@ -54,7 +55,7 @@
             carLotListBox.Margin = new Padding(3, 4, 3, 4);
             carLotListBox.Name = "carLotListBox";
             carLotListBox.Size = new Size(534, 264);
-            carLotListBox.TabIndex = 5;
+            carLotListBox.TabIndex = 7;
             // 
             // carLotMenuStrip
             // 
@@ -69,17 +70,17 @@
             // 
             // optionsToolStripMenuItem
             // 
-            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addCarToolStripMenuItem, inventoryDetailsMenuItem, clearSearchMenuItem, exitMenuItem });
+            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addCarToolStripMenuItem, inventoryDetailsMenuItem, toolStripMenuItem1, clearSearchMenuItem, exitMenuItem });
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             optionsToolStripMenuItem.Size = new Size(75, 24);
-            optionsToolStripMenuItem.Text = "Options";
+            optionsToolStripMenuItem.Text = "&Options";
             // 
             // addCarToolStripMenuItem
             // 
             addCarToolStripMenuItem.Name = "addCarToolStripMenuItem";
             addCarToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
             addCarToolStripMenuItem.Size = new Size(267, 26);
-            addCarToolStripMenuItem.Text = "A&dd Car to Lot";
+            addCarToolStripMenuItem.Text = "&Add Car to Lot";
             addCarToolStripMenuItem.Click += AddCarMenuItemClick;
             // 
             // inventoryDetailsMenuItem
@@ -90,12 +91,20 @@
             inventoryDetailsMenuItem.Text = "&Detailed Inventory";
             inventoryDetailsMenuItem.Click += InventoryDetailsClick;
             // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.F;
+            toolStripMenuItem1.Size = new Size(267, 26);
+            toolStripMenuItem1.Text = "&Search By Make";
+            toolStripMenuItem1.Click += SearchByMakeClick;
+            // 
             // clearSearchMenuItem
             // 
             clearSearchMenuItem.Name = "clearSearchMenuItem";
             clearSearchMenuItem.ShortcutKeys = Keys.Control | Keys.L;
             clearSearchMenuItem.Size = new Size(267, 26);
-            clearSearchMenuItem.Text = "C&lear List Search";
+            clearSearchMenuItem.Text = "C&lear Search";
             clearSearchMenuItem.Click += ClearSearchButtonClick;
             // 
             // exitMenuItem
@@ -118,10 +127,10 @@
             // 
             // purchaseCarButton
             // 
-            purchaseCarButton.Location = new Point(455, 418);
+            purchaseCarButton.Location = new Point(444, 418);
             purchaseCarButton.Name = "purchaseCarButton";
-            purchaseCarButton.Size = new Size(138, 29);
-            purchaseCarButton.TabIndex = 7;
+            purchaseCarButton.Size = new Size(149, 29);
+            purchaseCarButton.TabIndex = 10;
             purchaseCarButton.Text = "Purchase Car";
             purchaseCarButton.UseVisualStyleBackColor = true;
             purchaseCarButton.Click += PurchaseCarClick;
@@ -129,26 +138,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(59, 123);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(59, 115);
             label1.Name = "label1";
-            label1.Size = new Size(70, 20);
-            label1.TabIndex = 4;
+            label1.Size = new Size(95, 28);
+            label1.TabIndex = 5;
             label1.Text = "Inventory";
             // 
             // shopperNameLabel
             // 
-            shopperNameLabel.Location = new Point(304, 29);
+            shopperNameLabel.Location = new Point(230, 29);
             shopperNameLabel.Name = "shopperNameLabel";
-            shopperNameLabel.Size = new Size(338, 20);
-            shopperNameLabel.TabIndex = 2;
+            shopperNameLabel.Size = new Size(412, 20);
+            shopperNameLabel.TabIndex = 3;
             shopperNameLabel.TextAlign = ContentAlignment.TopRight;
             // 
             // shopperTotalLabel
             // 
-            shopperTotalLabel.Location = new Point(304, 49);
+            shopperTotalLabel.Location = new Point(230, 49);
             shopperTotalLabel.Name = "shopperTotalLabel";
-            shopperTotalLabel.Size = new Size(338, 20);
-            shopperTotalLabel.TabIndex = 3;
+            shopperTotalLabel.Size = new Size(412, 20);
+            shopperTotalLabel.TabIndex = 4;
             shopperTotalLabel.TextAlign = ContentAlignment.TopRight;
             // 
             // button1
@@ -165,8 +175,8 @@
             // 
             clearSearchButton.Location = new Point(206, 418);
             clearSearchButton.Name = "clearSearchButton";
-            clearSearchButton.Size = new Size(116, 29);
-            clearSearchButton.TabIndex = 8;
+            clearSearchButton.Size = new Size(119, 29);
+            clearSearchButton.TabIndex = 9;
             clearSearchButton.Text = "Clear Search";
             clearSearchButton.UseVisualStyleBackColor = true;
             clearSearchButton.Click += ClearSearchButtonClick;
@@ -176,7 +186,7 @@
             searchMakeModelButton.Location = new Point(59, 418);
             searchMakeModelButton.Name = "searchMakeModelButton";
             searchMakeModelButton.Size = new Size(141, 29);
-            searchMakeModelButton.TabIndex = 9;
+            searchMakeModelButton.TabIndex = 8;
             searchMakeModelButton.Text = "Search By Make";
             searchMakeModelButton.UseVisualStyleBackColor = true;
             searchMakeModelButton.Click += SearchByMakeClick;
@@ -186,7 +196,7 @@
             viewPurchasesButton.Location = new Point(8, 64);
             viewPurchasesButton.Name = "viewPurchasesButton";
             viewPurchasesButton.Size = new Size(126, 29);
-            viewPurchasesButton.TabIndex = 10;
+            viewPurchasesButton.TabIndex = 2;
             viewPurchasesButton.Text = "View Purchases";
             viewPurchasesButton.UseVisualStyleBackColor = true;
             viewPurchasesButton.Click += ViewPurchasesButtonClick;
@@ -235,5 +245,6 @@
         private Button clearSearchButton;
         private Button searchMakeModelButton;
         private Button viewPurchasesButton;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }
