@@ -11,6 +11,12 @@ namespace CarolineLoveProject1
     {
         private Shopper? _shopper;
 
+        /// <summary>
+        /// The car lot read-only property.
+        /// </summary>
+        /// <value>
+        /// The car lot.
+        /// </value>
         public CarLot CarLot { get; }
 
         /// <summary>
@@ -25,7 +31,7 @@ namespace CarolineLoveProject1
 
         private void PurchaseCarClick(object sender, EventArgs e)
         {
-            var car = (Car?) carLotListBox.SelectedItem;
+            var car = (Car?)carLotListBox.SelectedItem;
             if (car != null && _shopper != null)
             {
                 var totalCost = CarLot.GetTotalCostOfPurchase(car);
@@ -51,7 +57,8 @@ namespace CarolineLoveProject1
             var carToRemove = CarLot.PurchaseCar(car.Make, car.Model);
             _shopper.PurchaseCar(carToRemove, totalCost);
 
-            var message = $"{carToRemove.Make} {carToRemove.Model} \npurchased successfully! \nTotal Cost After Tax: {totalCost:C}";
+            var message = $"{carToRemove.Make} {carToRemove.Model} \n{carToRemove.Mpg}mpg \n{carToRemove.Price:C}" +
+                          $"\nwas purchased successfully! \n\nTotal Cost After Tax: {totalCost:C}";
             MessageBox.Show(message, "Purchase Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             shopperTotalLabel.Text = $"Money Available: {_shopper.MoneyAvailable:C}";
 
@@ -101,6 +108,18 @@ namespace CarolineLoveProject1
         {
             var inventoryDetailsForm = new InventoryDetailsForm(this);
             inventoryDetailsForm.ShowDialog();
+        }
+
+        private void SearchByMakeModelClick(object sender, EventArgs e)
+        {
+            //var resultsList = new List<Car>();
+            //foreach (var car in CarLot.Inventory)
+            //{
+                
+            //}
+            //carLotListBox.DataSource = null;
+            //carLotListBox.Items.Clear();
+            //carLotListBox.DataSource = resultsList;
         }
     }
 }

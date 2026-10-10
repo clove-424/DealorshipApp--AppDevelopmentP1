@@ -33,22 +33,26 @@
             optionsToolStripMenuItem = new ToolStripMenuItem();
             addCarToolStripMenuItem = new ToolStripMenuItem();
             inventoryDetailsMenuItem = new ToolStripMenuItem();
+            clearSearchMenuItem = new ToolStripMenuItem();
             exitMenuItem = new ToolStripMenuItem();
             addShopperButton = new Button();
             purchaseCarButton = new Button();
             label1 = new Label();
             shopperNameLabel = new Label();
             shopperTotalLabel = new Label();
+            button1 = new Button();
+            clearSearchButton = new Button();
+            searchMakeModelButton = new Button();
             carLotMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // carLotListBox
             // 
             carLotListBox.FormattingEnabled = true;
-            carLotListBox.Location = new Point(133, 155);
+            carLotListBox.Location = new Point(59, 133);
             carLotListBox.Margin = new Padding(3, 4, 3, 4);
             carLotListBox.Name = "carLotListBox";
-            carLotListBox.Size = new Size(398, 264);
+            carLotListBox.Size = new Size(534, 264);
             carLotListBox.TabIndex = 5;
             // 
             // carLotMenuStrip
@@ -64,7 +68,7 @@
             // 
             // optionsToolStripMenuItem
             // 
-            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addCarToolStripMenuItem, inventoryDetailsMenuItem, exitMenuItem });
+            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addCarToolStripMenuItem, inventoryDetailsMenuItem, clearSearchMenuItem, exitMenuItem });
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             optionsToolStripMenuItem.Size = new Size(75, 24);
             optionsToolStripMenuItem.Text = "Options";
@@ -72,22 +76,32 @@
             // addCarToolStripMenuItem
             // 
             addCarToolStripMenuItem.Name = "addCarToolStripMenuItem";
-            addCarToolStripMenuItem.Size = new Size(224, 26);
-            addCarToolStripMenuItem.Text = "Add Car to Lot";
+            addCarToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
+            addCarToolStripMenuItem.Size = new Size(267, 26);
+            addCarToolStripMenuItem.Text = "A&dd Car to Lot";
             addCarToolStripMenuItem.Click += AddCarMenuItemClick;
             // 
             // inventoryDetailsMenuItem
             // 
             inventoryDetailsMenuItem.Name = "inventoryDetailsMenuItem";
-            inventoryDetailsMenuItem.Size = new Size(224, 26);
-            inventoryDetailsMenuItem.Text = "Inventory Details";
+            inventoryDetailsMenuItem.ShortcutKeys = Keys.Control | Keys.D;
+            inventoryDetailsMenuItem.Size = new Size(267, 26);
+            inventoryDetailsMenuItem.Text = "&Detailed Inventory";
             inventoryDetailsMenuItem.Click += InventoryDetailsClick;
+            // 
+            // clearSearchMenuItem
+            // 
+            clearSearchMenuItem.Name = "clearSearchMenuItem";
+            clearSearchMenuItem.ShortcutKeys = Keys.Control | Keys.L;
+            clearSearchMenuItem.Size = new Size(267, 26);
+            clearSearchMenuItem.Text = "C&lear List Search";
             // 
             // exitMenuItem
             // 
             exitMenuItem.Name = "exitMenuItem";
-            exitMenuItem.Size = new Size(224, 26);
-            exitMenuItem.Text = "Exit";
+            exitMenuItem.ShortcutKeys = Keys.Control | Keys.Q;
+            exitMenuItem.Size = new Size(267, 26);
+            exitMenuItem.Text = "E&xit";
             exitMenuItem.Click += ExitFormClick;
             // 
             // addShopperButton
@@ -102,10 +116,10 @@
             // 
             // purchaseCarButton
             // 
-            purchaseCarButton.Location = new Point(133, 427);
+            purchaseCarButton.Location = new Point(455, 404);
             purchaseCarButton.Name = "purchaseCarButton";
             purchaseCarButton.Size = new Size(138, 29);
-            purchaseCarButton.TabIndex = 6;
+            purchaseCarButton.TabIndex = 7;
             purchaseCarButton.Text = "Purchase Car";
             purchaseCarButton.UseVisualStyleBackColor = true;
             purchaseCarButton.Click += PurchaseCarClick;
@@ -113,7 +127,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(133, 131);
+            label1.Location = new Point(59, 109);
             label1.Name = "label1";
             label1.Size = new Size(70, 20);
             label1.TabIndex = 4;
@@ -135,11 +149,43 @@
             shopperTotalLabel.TabIndex = 3;
             shopperTotalLabel.TextAlign = ContentAlignment.TopRight;
             // 
+            // button1
+            // 
+            button1.Location = new Point(437, 100);
+            button1.Name = "button1";
+            button1.Size = new Size(156, 29);
+            button1.TabIndex = 6;
+            button1.Text = "Detailed Inventory";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += InventoryDetailsClick;
+            // 
+            // clearSearchButton
+            // 
+            clearSearchButton.Location = new Point(273, 404);
+            clearSearchButton.Name = "clearSearchButton";
+            clearSearchButton.Size = new Size(116, 29);
+            clearSearchButton.TabIndex = 8;
+            clearSearchButton.Text = "Clear Search";
+            clearSearchButton.UseVisualStyleBackColor = true;
+            // 
+            // searchMakeModelButton
+            // 
+            searchMakeModelButton.Location = new Point(59, 404);
+            searchMakeModelButton.Name = "searchMakeModelButton";
+            searchMakeModelButton.Size = new Size(208, 29);
+            searchMakeModelButton.TabIndex = 9;
+            searchMakeModelButton.Text = "Search By Make and Model";
+            searchMakeModelButton.UseVisualStyleBackColor = true;
+            searchMakeModelButton.Click += SearchByMakeModelClick;
+            // 
             // CarLotForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(651, 480);
+            ClientSize = new Size(651, 483);
+            Controls.Add(searchMakeModelButton);
+            Controls.Add(clearSearchButton);
+            Controls.Add(button1);
             Controls.Add(shopperTotalLabel);
             Controls.Add(shopperNameLabel);
             Controls.Add(label1);
@@ -170,5 +216,9 @@
         private Label label1;
         private Label shopperNameLabel;
         private Label shopperTotalLabel;
+        private Button button1;
+        private ToolStripMenuItem clearSearchMenuItem;
+        private Button clearSearchButton;
+        private Button searchMakeModelButton;
     }
 }

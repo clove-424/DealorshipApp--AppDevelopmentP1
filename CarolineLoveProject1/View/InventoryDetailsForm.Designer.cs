@@ -38,11 +38,12 @@
             mostExpCarClick = new Label();
             bestMpgLabel = new Label();
             worstMpgLabel = new Label();
+            showStatsButton = new Button();
             SuspendLayout();
             // 
             // leastExpTextBox
             // 
-            leastExpTextBox.Location = new Point(34, 275);
+            leastExpTextBox.Location = new Point(34, 320);
             leastExpTextBox.Name = "leastExpTextBox";
             leastExpTextBox.ReadOnly = true;
             leastExpTextBox.Size = new Size(421, 27);
@@ -50,7 +51,7 @@
             // 
             // mostExpTextBox
             // 
-            mostExpTextBox.Location = new Point(34, 357);
+            mostExpTextBox.Location = new Point(34, 402);
             mostExpTextBox.Name = "mostExpTextBox";
             mostExpTextBox.ReadOnly = true;
             mostExpTextBox.Size = new Size(421, 27);
@@ -58,7 +59,7 @@
             // 
             // bestMpgTextBox
             // 
-            bestMpgTextBox.Location = new Point(34, 448);
+            bestMpgTextBox.Location = new Point(34, 493);
             bestMpgTextBox.Name = "bestMpgTextBox";
             bestMpgTextBox.ReadOnly = true;
             bestMpgTextBox.Size = new Size(421, 27);
@@ -66,7 +67,7 @@
             // 
             // worstMpgTextBox
             // 
-            worstMpgTextBox.Location = new Point(34, 536);
+            worstMpgTextBox.Location = new Point(34, 581);
             worstMpgTextBox.Name = "worstMpgTextBox";
             worstMpgTextBox.ReadOnly = true;
             worstMpgTextBox.Size = new Size(421, 27);
@@ -92,7 +93,7 @@
             // leastExpCarLabel
             // 
             leastExpCarLabel.AutoSize = true;
-            leastExpCarLabel.Location = new Point(34, 252);
+            leastExpCarLabel.Location = new Point(34, 297);
             leastExpCarLabel.Name = "leastExpCarLabel";
             leastExpCarLabel.Size = new Size(141, 20);
             leastExpCarLabel.TabIndex = 2;
@@ -101,7 +102,7 @@
             // mostExpCarClick
             // 
             mostExpCarClick.AutoSize = true;
-            mostExpCarClick.Location = new Point(34, 334);
+            mostExpCarClick.Location = new Point(34, 379);
             mostExpCarClick.Name = "mostExpCarClick";
             mostExpCarClick.Size = new Size(140, 20);
             mostExpCarClick.TabIndex = 4;
@@ -110,7 +111,7 @@
             // bestMpgLabel
             // 
             bestMpgLabel.AutoSize = true;
-            bestMpgLabel.Location = new Point(34, 421);
+            bestMpgLabel.Location = new Point(34, 466);
             bestMpgLabel.Name = "bestMpgLabel";
             bestMpgLabel.Size = new Size(75, 20);
             bestMpgLabel.TabIndex = 6;
@@ -119,17 +120,28 @@
             // worstMpgLabel
             // 
             worstMpgLabel.AutoSize = true;
-            worstMpgLabel.Location = new Point(34, 513);
+            worstMpgLabel.Location = new Point(34, 558);
             worstMpgLabel.Name = "worstMpgLabel";
             worstMpgLabel.Size = new Size(85, 20);
             worstMpgLabel.TabIndex = 8;
             worstMpgLabel.Text = "Worst MPG:";
             // 
+            // showStatsButton
+            // 
+            showStatsButton.Location = new Point(171, 255);
+            showStatsButton.Name = "showStatsButton";
+            showStatsButton.Size = new Size(133, 29);
+            showStatsButton.TabIndex = 10;
+            showStatsButton.Text = "Show Stats";
+            showStatsButton.UseVisualStyleBackColor = true;
+            showStatsButton.Click += ShowStatsButtonClick;
+            // 
             // InventoryDetailsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(487, 598);
+            ClientSize = new Size(487, 635);
+            Controls.Add(showStatsButton);
             Controls.Add(worstMpgLabel);
             Controls.Add(bestMpgLabel);
             Controls.Add(mostExpCarClick);
@@ -157,5 +169,6 @@
         private Label mostExpCarClick;
         private Label bestMpgLabel;
         private Label worstMpgLabel;
+        private Button showStatsButton;
     }
 }
