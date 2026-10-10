@@ -35,10 +35,15 @@ namespace CarolineLoveProject1.View
                 MessageBox.Show("Please enter a make to search for.", "Invalid Input",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            CarsByMake = _carLotForm.CarLot.FindCarsByMake(makeTextBox.Text);
+            if (CarsByMake == null)
+            {
+                MessageBox.Show("No cars found for the specified make.", "Search Results",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
-                CarsByMake = _carLotForm.CarLot.FindCarsByMake(makeTextBox.Text);
-
                 Close();
             }
         }

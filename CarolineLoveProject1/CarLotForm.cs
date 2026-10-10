@@ -25,7 +25,7 @@ namespace CarolineLoveProject1
         public CarLotForm()
         {
             InitializeComponent();
-            CarLot = new();
+            CarLot = new CarLot();
             UpdateCarLot();
         }
 
@@ -55,14 +55,17 @@ namespace CarolineLoveProject1
         private void MakePurchase(Car car, decimal totalCost)
         {
             var carToRemove = CarLot.PurchaseCar(car.Make, car.Model);
-            _shopper.PurchaseCar(carToRemove, totalCost);
+            if (carToRemove != null)
+            {
+                _shopper.PurchaseCar(carToRemove, totalCost);
 
-            var message = $"{carToRemove.Make} {carToRemove.Model} \n{carToRemove.Mpg}mpg \n{carToRemove.Price:C}" +
-                          $"\nwas purchased successfully! \n\nTotal Cost After Tax: {totalCost:C}";
-            MessageBox.Show(message, "Purchase Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            shopperTotalLabel.Text = $"Money Available: {_shopper.MoneyAvailable:C}";
+                var message = $"{carToRemove.Make} {carToRemove.Model} \n{carToRemove.Mpg}mpg \n{carToRemove.Price:C}" +
+                              $"\nwas purchased successfully! \n\nTotal Cost After Tax (7.8%): \n{totalCost:C}";
+                MessageBox.Show(message, "Purchase Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                shopperTotalLabel.Text = $"Money Available: {_shopper.MoneyAvailable:C}";
 
-            UpdateCarLot();
+                UpdateCarLot();
+            }
         }
 
         private void AddCarMenuItemClick(object sender, EventArgs e)
@@ -88,7 +91,7 @@ namespace CarolineLoveProject1
 
         private void AddShopperClick(object sender, EventArgs e)
         {
-            var shopperForm = new ShopperForm();
+            var shopperForm = new AddShopperForm();
             shopperForm.ShowDialog();
 
             _shopper = shopperForm.Shopper;

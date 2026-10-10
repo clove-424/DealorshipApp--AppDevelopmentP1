@@ -96,6 +96,7 @@
             clearSearchMenuItem.ShortcutKeys = Keys.Control | Keys.L;
             clearSearchMenuItem.Size = new Size(267, 26);
             clearSearchMenuItem.Text = "C&lear List Search";
+            clearSearchMenuItem.Click += ClearSearchButtonClick;
             // 
             // exitMenuItem
             // 

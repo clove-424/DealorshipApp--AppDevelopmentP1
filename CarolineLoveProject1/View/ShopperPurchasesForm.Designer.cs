@@ -35,7 +35,7 @@
             // shopperPurchasesLabel
             // 
             shopperPurchasesLabel.AutoSize = true;
-            shopperPurchasesLabel.Location = new Point(78, 54);
+            shopperPurchasesLabel.Location = new Point(78, 21);
             shopperPurchasesLabel.Name = "shopperPurchasesLabel";
             shopperPurchasesLabel.Size = new Size(0, 20);
             shopperPurchasesLabel.TabIndex = 0;
@@ -43,7 +43,7 @@
             // shopperPurchasesListBox
             // 
             shopperPurchasesListBox.FormattingEnabled = true;
-            shopperPurchasesListBox.Location = new Point(78, 77);
+            shopperPurchasesListBox.Location = new Point(78, 44);
             shopperPurchasesListBox.Name = "shopperPurchasesListBox";
             shopperPurchasesListBox.Size = new Size(318, 324);
             shopperPurchasesListBox.TabIndex = 1;
@@ -52,7 +52,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(474, 450);
+            ClientSize = new Size(474, 405);
             Controls.Add(shopperPurchasesListBox);
             Controls.Add(shopperPurchasesLabel);
             Name = "ShopperPurchasesForm";

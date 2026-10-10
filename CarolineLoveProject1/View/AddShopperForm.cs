@@ -3,10 +3,10 @@
 namespace CarolineLoveProject1.View
 {
     /// <summary>
-    /// The ShopperForm class represents a form for adding a new shopper with properties for name and money available.
+    /// The AddShopperForm class represents a form for adding a new shopper with properties for name and money available.
     /// </summary>
     /// <seealso cref="System.Windows.Forms.Form" />
-    public partial class ShopperForm : Form
+    public partial class AddShopperForm : Form
     {
         /// <summary>
         /// The Shopper property.
@@ -17,9 +17,9 @@ namespace CarolineLoveProject1.View
         public Shopper? Shopper { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of a ShopperForm.
+        /// Initializes a new instance of a AddShopperForm.
         /// </summary>
-        public ShopperForm()
+        public AddShopperForm()
         {
             InitializeComponent();
         }

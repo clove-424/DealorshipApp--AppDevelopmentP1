@@ -14,7 +14,7 @@ namespace CarolineLoveProject1.View
 
             if (shopper != null)
             {
-                shopperPurchasesLabel.Text = $"{shopper.Name}'s Purchases:";
+                shopperPurchasesLabel.Text = $"{shopper.Name}'s Purchases: {shopper.Cars.Count} cars";
                 shopperPurchasesListBox.DataSource = null;
                 shopperPurchasesListBox.Items.Clear();
                 shopperPurchasesListBox.DataSource = shopper.Cars;

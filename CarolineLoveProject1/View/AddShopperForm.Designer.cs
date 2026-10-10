@@ -1,6 +1,6 @@
 ﻿namespace CarolineLoveProject1.View
 {
-    partial class ShopperForm
+    partial class AddShopperForm
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,7 @@
             submitShopperButton.UseVisualStyleBackColor = true;
             submitShopperButton.Click += AddShopperButtonClick;
             // 
-            // ShopperForm
+            // AddShopperForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -87,7 +87,7 @@
             Controls.Add(shopperNameTextBox);
             Controls.Add(moneyAvailableLabel);
             Controls.Add(shopperLabel);
-            Name = "ShopperForm";
+            Name = "AddShopperForm";
             Text = "Add Shopper Information";
             ResumeLayout(false);
             PerformLayout();

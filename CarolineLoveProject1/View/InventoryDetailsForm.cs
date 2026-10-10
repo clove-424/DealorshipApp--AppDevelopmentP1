@@ -20,7 +20,7 @@ namespace CarolineLoveProject1.View
             InitializeComponent();
 
             _carLotForm = carLotForm;
-            inventoryCountLabel.Text = $"Inventory of {_carLotForm.CarLot.Inventory.Count} cars:";
+            inventoryCountLabel.Text = $"Inventory of {_carLotForm.CarLot.Count} cars:";
 
             PopulateInventoryTextBox();
         }
@@ -55,7 +55,7 @@ namespace CarolineLoveProject1.View
             }
         }
 
-        private string FormatCarInfo(Car? car)
+        private static string FormatCarInfo(Car? car)
         {
             if (car != null)
             {

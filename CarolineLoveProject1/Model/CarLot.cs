@@ -55,7 +55,7 @@
             var carsByMakeList = new List<Car>();
             foreach (var item in _inventory)
             {
-                if (item.Make.ToLower().Equals(make.ToLower()))
+                if (item.Make.ToLower().Contains(make.ToLower()))
                 {
                     carsByMakeList.Add(item);
                 }
@@ -123,7 +123,7 @@
         /// </summary>
         /// <param name="car">The car.</param>
         /// <returns>The total cost of the purchase, or $0.00 if the car is not found.</returns>
-        public decimal GetTotalCostOfPurchase(Car? car)
+        public static decimal GetTotalCostOfPurchase(Car? car)
         {
             if (car != null)
             {
