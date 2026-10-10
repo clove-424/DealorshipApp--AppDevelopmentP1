@@ -31,7 +31,7 @@ namespace CarolineLoveProject1
 
         private void PurchaseCarClick(object sender, EventArgs e)
         {
-            var car = (Car?) carLotListBox.SelectedItem;
+            var car = (Car?)carLotListBox.SelectedItem;
             if (car != null && _shopper != null)
             {
                 var totalCost = CarLot.GetTotalCostOfPurchase(car);
@@ -121,12 +121,25 @@ namespace CarolineLoveProject1
                 carLotListBox.Items.Clear();
                 carLotListBox.DataSource = searchMakeForm.CarsByMake;
             }
-            
         }
 
         private void ClearSearchButtonClick(object sender, EventArgs e)
         {
             UpdateCarLot();
+        }
+
+        private void ViewPurchasesButtonClick(object sender, EventArgs e)
+        {
+            if (_shopper == null)
+            {
+                MessageBox.Show("Please add a shopper before viewing purchases.", "No Shopper",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var purchasesForm = new ShopperPurchasesForm(_shopper);
+                purchasesForm.ShowDialog();
+            }
         }
     }
 }

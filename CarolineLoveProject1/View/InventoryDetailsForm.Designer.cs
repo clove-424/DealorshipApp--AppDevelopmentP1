@@ -153,7 +153,7 @@
             Controls.Add(mostExpTextBox);
             Controls.Add(leastExpTextBox);
             Name = "InventoryDetailsForm";
-            Text = "InventoryDetailsForm";
+            Text = "Inventory Details";
             ResumeLayout(false);
             PerformLayout();
         }

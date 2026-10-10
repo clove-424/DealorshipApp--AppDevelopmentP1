@@ -18,7 +18,7 @@
         /// <value>
         /// The inventory count.
         /// </value>
-        public int Count => _inventory?.Count ?? 0;
+        public int Count => _inventory.Count;
 
         /// <summary>
         /// The Inventory property.
@@ -33,7 +33,7 @@
         /// </summary>
         public CarLot()
         {
-            _inventory = new();
+            _inventory = [];
             StockLotWithDefaultInventory();
         }
 
@@ -55,7 +55,7 @@
             var carsByMakeList = new List<Car>();
             foreach (var item in _inventory)
             {
-                if (item.Make?.ToLower() == make.ToLower())
+                if (item.Make.ToLower().Equals(make.ToLower()))
                 {
                     carsByMakeList.Add(item);
                 }
@@ -79,7 +79,7 @@
         {
             foreach (var car in _inventory)
             {
-                if (car.Make?.ToLower() == make.ToLower() && car.Model?.ToLower() == model.ToLower())
+                if (car.Make.ToLower().Equals(make.ToLower()) && car.Model.ToLower().Equals(model.ToLower()))
                 {
                     return car;
                 }

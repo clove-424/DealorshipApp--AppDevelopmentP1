@@ -5,7 +5,7 @@
     /// </summary>
     public class Shopper
     {
-        private readonly List<Car> _cars;
+        public List<Car> Cars { get; set; }
 
         /// <summary>
         /// The shopper's name property.
@@ -13,7 +13,7 @@
         /// <value>
         /// The name.
         /// </value>
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The shopper's money available property.
@@ -34,15 +34,15 @@
         {
             if (string.IsNullOrEmpty(name))
             {
-                throw new ArgumentException("Name cannot be null or empty.", nameof(name));
+                throw new ArgumentException(nameof(name));
             }
             if (moneyAvailable < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(moneyAvailable), "Money available cannot be negative.");
+                throw new ArgumentOutOfRangeException(nameof(moneyAvailable));
             }
             Name = name;
             MoneyAvailable = Math.Round(moneyAvailable, 2);
-            _cars = new();
+            Cars = [];
         }
 
         /// <summary>
@@ -55,7 +55,7 @@
         /// </returns>
         public bool CanPurchase(Car car, decimal totalCost)
         {
-            if (MoneyAvailable >= totalCost && !_cars.Contains(car))
+            if (MoneyAvailable >= totalCost && !Cars.Contains(car))
             {
                 return true;
             }
@@ -71,7 +71,7 @@
         {
             if (CanPurchase(car, totalCost))
             {
-                _cars.Add(car);
+                Cars.Add(car);
                 MoneyAvailable -= totalCost;
             }
         }
