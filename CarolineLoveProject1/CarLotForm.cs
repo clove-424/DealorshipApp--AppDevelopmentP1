@@ -31,7 +31,7 @@ namespace CarolineLoveProject1
 
         private void PurchaseCarClick(object sender, EventArgs e)
         {
-            var car = (Car?)carLotListBox.SelectedItem;
+            var car = (Car?) carLotListBox.SelectedItem;
             if (car != null && _shopper != null)
             {
                 var totalCost = CarLot.GetTotalCostOfPurchase(car);
@@ -110,16 +110,23 @@ namespace CarolineLoveProject1
             inventoryDetailsForm.ShowDialog();
         }
 
-        private void SearchByMakeModelClick(object sender, EventArgs e)
+        private void SearchByMakeClick(object sender, EventArgs e)
         {
-            //var resultsList = new List<Car>();
-            //foreach (var car in CarLot.Inventory)
-            //{
-                
-            //}
-            //carLotListBox.DataSource = null;
-            //carLotListBox.Items.Clear();
-            //carLotListBox.DataSource = resultsList;
+            var searchMakeForm = new SearchMakeForm(this);
+            searchMakeForm.ShowDialog();
+
+            if (searchMakeForm.CarsByMake?.Count > 0)
+            {
+                carLotListBox.DataSource = null;
+                carLotListBox.Items.Clear();
+                carLotListBox.DataSource = searchMakeForm.CarsByMake;
+            }
+            
+        }
+
+        private void ClearSearchButtonClick(object sender, EventArgs e)
+        {
+            UpdateCarLot();
         }
     }
 }

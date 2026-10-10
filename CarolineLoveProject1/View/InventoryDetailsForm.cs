@@ -1,9 +1,18 @@
 ﻿namespace CarolineLoveProject1.View
 {
+    /// <summary>
+    /// The InventoryDetailsForm class represents a form that displays the details of the car inventory,
+    /// including the list of cars and their statistics.
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class InventoryDetailsForm : Form
     {
         private readonly CarLotForm _carLotForm;
 
+        /// <summary>
+        /// Initializes a new instance of an InventoryDetailsForm.
+        /// </summary>
+        /// <param name="carLotForm">The car lot form.</param>
         public InventoryDetailsForm(CarLotForm carLotForm)
         {
             InitializeComponent();

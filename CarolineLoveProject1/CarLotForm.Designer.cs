@@ -161,22 +161,23 @@
             // 
             // clearSearchButton
             // 
-            clearSearchButton.Location = new Point(273, 404);
+            clearSearchButton.Location = new Point(206, 404);
             clearSearchButton.Name = "clearSearchButton";
             clearSearchButton.Size = new Size(116, 29);
             clearSearchButton.TabIndex = 8;
             clearSearchButton.Text = "Clear Search";
             clearSearchButton.UseVisualStyleBackColor = true;
+            clearSearchButton.Click += ClearSearchButtonClick;
             // 
             // searchMakeModelButton
             // 
             searchMakeModelButton.Location = new Point(59, 404);
             searchMakeModelButton.Name = "searchMakeModelButton";
-            searchMakeModelButton.Size = new Size(208, 29);
+            searchMakeModelButton.Size = new Size(141, 29);
             searchMakeModelButton.TabIndex = 9;
-            searchMakeModelButton.Text = "Search By Make and Model";
+            searchMakeModelButton.Text = "Search By Make";
             searchMakeModelButton.UseVisualStyleBackColor = true;
-            searchMakeModelButton.Click += SearchByMakeModelClick;
+            searchMakeModelButton.Click += SearchByMakeClick;
             // 
             // CarLotForm
             // 
