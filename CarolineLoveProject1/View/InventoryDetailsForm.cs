@@ -1,4 +1,6 @@
-﻿namespace CarolineLoveProject1.View
+﻿using CarolineLoveProject1.Model;
+
+namespace CarolineLoveProject1.View
 {
     /// <summary>
     /// The InventoryDetailsForm class represents a form that displays the details of the car inventory,
@@ -46,13 +48,21 @@
 
             if (_carLotForm.CarLot.Inventory.Count > 0)
             {
-                leastExpTextBox.Text =
-                    $"{leastExpensiveCar.Make} {leastExpensiveCar.Model} {leastExpensiveCar.Price:C}";
-                mostExpTextBox.Text =
-                    $"{mostExpensiveCar.Make} {mostExpensiveCar.Model} {mostExpensiveCar.Price:C}";
-                bestMpgTextBox.Text = $"{bestMpgCar.Make} {bestMpgCar.Model} {bestMpgCar.Mpg}mpg";
-                worstMpgTextBox.Text = $"{worstMpgCar.Make} {worstMpgCar.Model} {worstMpgCar.Mpg}mpg";
+                leastExpTextBox.Text = FormatCarInfo(leastExpensiveCar);
+                mostExpTextBox.Text = FormatCarInfo(mostExpensiveCar);
+                bestMpgTextBox.Text = FormatCarInfo(bestMpgCar);
+                worstMpgTextBox.Text = FormatCarInfo(worstMpgCar);
             }
+        }
+
+        private string FormatCarInfo(Car? car)
+        {
+            if (car != null)
+            {
+                return $"{car.Make} {car.Model}   {car.Price:C}   {car.Mpg}mpg";
+
+            }
+            return "";
         }
     }
 }

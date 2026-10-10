@@ -31,7 +31,7 @@ namespace CarolineLoveProject1
 
         private void PurchaseCarClick(object sender, EventArgs e)
         {
-            var car = (Car?)carLotListBox.SelectedItem;
+            var car = (Car?) carLotListBox.SelectedItem;
             if (car != null && _shopper != null)
             {
                 var totalCost = CarLot.GetTotalCostOfPurchase(car);
@@ -95,7 +95,7 @@ namespace CarolineLoveProject1
             if (_shopper != null)
             {
                 shopperNameLabel.Text = $"Shopper: {_shopper.Name}";
-                shopperTotalLabel.Text = $"Money Available: {_shopper.MoneyAvailable.ToString("C")}";
+                shopperTotalLabel.Text = $"Money Available: {_shopper.MoneyAvailable:C}";
             }
         }
 
